@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "angular-mfe": "apps/angular-mfe",
+    "angular-mfe-e2e": "apps/angular-mfe-e2e"
+  }
+}
