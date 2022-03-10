@@ -28,7 +28,9 @@
     },
     {
       "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nrwl/nx/javascript"],
+      "extends": ["plugin:@nrwl/nx/javascript",
+        "prettier"
+      ],
       "rules": {}
     }
   ]

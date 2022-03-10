@@ -1,5 +1,3 @@
-
-
 # Myorg
 
 This project was generated using [Nx](https://nx.dev).
@@ -87,11 +85,6 @@ Run `nx graph` to see a diagram of the dependencies of your projects.
 
 Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
 
-
-
-
-
-
 ## ☁ Nx Cloud
 
 ### Distributed Computation Caching & Distributed Task Execution
@@ -103,3 +96,62 @@ Nx Cloud pairs with Nx in order to enable you to build and test code more rapidl
 Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
 
 Visit [Nx Cloud](https://nx.app/) to learn more.
+
+Visit [Prettier](https://prettier.io/docs/en/install.html) to learn more.
+Format all files with Prettier:
+Run:$ yarn prettier --write .
+Run:$ yarn prettier --check .
+
+Visit [Husky using yarn 2](https://typicode.github.io/husky/#/?id=yarn-2) to learn more.
+
+##Install husky
+Run:$ yarn add husky --dev
+
+##Enable Git hooks
+Run:$ yarn husky install
+
+##To automatically have Git hooks enabled after install, edit package.json
+// package.json
+{
+"private": true, // ← your package is private, you only need postinstall
+"scripts": {
+"postinstall": "husky install"
+}
+}
+
+###By design, husky install must be run in the same directory as .git, but you can change directory during prepare script and pass a subdirectory:
+// package.json
+{
+"scripts": {
+"prepare": "cd .. && husky install front/.husky"
+}
+}
+###In your hooks, you'll also need to change directory:
+
+##Bypass hooks:
+You can bypass pre-commit and commit-msg hooks using Git -n/--no-verify option:
+git commit -m "yolo!" --no-verify
+
+##Disable husky in CI/Docker/Prod
+
+to prevent husky from installing completely
+
+npm ci --omit=dev --ignore-scripts
+
+##Alternatively, disable prepare script with
+npm set-script prepare ""
+npm ci --omit=dev
+
+##yarn add is-ci
+
+// package.json
+{
+"scripts": {
+"prepare": "is-ci || husky install"
+}
+}
+
+##Git-flow
+If using git-flow you need to ensure your git-flow hooks directory is set to use Husky's (.husky by default).
+
+git config gitflow.path.hooks .husky
