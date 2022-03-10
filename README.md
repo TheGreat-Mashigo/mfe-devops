@@ -99,16 +99,16 @@ Visit [Nx Cloud](https://nx.app/) to learn more.
 
 Visit [Prettier](https://prettier.io/docs/en/install.html) to learn more.
 Format all files with Prettier:
-Run:$ yarn prettier --write .
-Run:$ yarn prettier --check .
+Run:$ `yarn prettier --write .`
+Run:$ `yarn prettier --check .`
 
 Visit [Husky using yarn 2](https://typicode.github.io/husky/#/?id=yarn-2) to learn more.
 
 ##Install husky
-Run:$ yarn add husky --dev
+Run:$ `yarn add husky --dev`
 
 ##Enable Git hooks
-Run:$ yarn husky install
+Run:$ `yarn husky install`
 
 ##To automatically have Git hooks enabled after install, edit package.json
 // package.json
